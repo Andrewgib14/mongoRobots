@@ -59,7 +59,7 @@ app.get("/:_id", function (req, res) {
         else if (!foundRobot) {
             res.send("No user found")
         }
-        res.render("profile", { data: foundRobot });
+        res.render("profile", { user: foundRobot });
     })
 })
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{name}}'s Profile</title>
+    <title>{{user.name}}'s Profile</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -13,6 +13,7 @@
     <nav>
         <a href="/">Home</a>
     </nav>
+    {{#user}}
     <div class="profileContainer">
         <div class="avatar-container">
             <img class="avatar" src="{{avatar}}" alt="">
@@ -28,6 +29,7 @@
             <span><strong>Skills </strong>{{skills}}</span>
         </div>
     </div>
+    {{/user}}
 </body>
 
 </html>
