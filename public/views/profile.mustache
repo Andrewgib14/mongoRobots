@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{name}}'s Profile</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <div class="profileContainer">
+        <div class="avatar-container">
+            <img class="avatar" src="{{avatar}}" alt="">
+        </div>
+        <div class="text">
+            <h1 class="name">{{name}}</h1>{{#address.city}}
+            <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}} {{/job}} {{^job}}<span class="hire"> Avalible for hire </span>{{/job}}</p>{{/address.city}}
+            {{^address.city}}
+            <p>{{address.country}} | {{#job}} {{job}}, {{company}} {{/job}} {{^job}}<span class="hire"> Avalible for hire </span>{{/job}}</p>{{/address.city}}
+            <p>{{email}} | {{phone}}</p>
+            {{#university}}
+            <span><strong>Education </strong>{{university}}</span><br> {{/university}} {{^university}} {{/university}}
+            <span><strong>Skills </strong>{{skills}}</span>
+        </div>
+    </div>
+</body>
+
+</html>

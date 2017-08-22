@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+a {
+    color: #4A80CC;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    width: 18%;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid grey;
+    text-align: center;
+    font-size: 18px;
+}
+
+#name {
+    font-size: 25px;
+}
+
+.name {
+    font-size: 40px;
+}
+
+.hire {
+    color: red;
+}
+
+.avatar {
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    height: 175px;
+}
+
+.avatar-container {
+    margin-right: 50px;
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+}
