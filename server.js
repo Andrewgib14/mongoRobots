@@ -16,7 +16,7 @@ app.set("view engine", "mustache");
 
 app.use(express.static(path.join(__dirname, "./public")));
 
-app.get("/", function (req, res) {
+app.get("/insertMany", function (req, res) {
     MongoClient.connect(dbUrl, function (err, db) {
         if (err) {
             res.status(500).send(err);
