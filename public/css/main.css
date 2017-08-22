@@ -7,6 +7,14 @@ a {
     text-decoration: none;
 }
 
+header {
+    text-align: center;
+}
+
+nav > a {
+    margin: 12px;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;

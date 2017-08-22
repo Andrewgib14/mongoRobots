@@ -10,13 +10,20 @@
 </head>
 
 <body>
-    <h1></h1>
+    <header>
+        <h1>Index</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/employed">Employed</a>
+            <a href="/unemployed">Available for Hire</a>
+        </nav>
+    </header>
     <div class="wrapper">
         {{#users}}
         <div class="container">
             <img src="{{avatar}}" alt="">
             <br>
-            <a href="/{{_id}}" id="name">{{name}}</a> {{#job}}
+            <a href="/profile/{{_id}}" id="name">{{name}}</a> {{#job}}
             <p>{{job}}, {{company}}</p>
             {{/job}} {{^job}}
             <p class="hire">Available for hire</p>

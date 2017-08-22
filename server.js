@@ -16,6 +16,7 @@ app.engine("mustache", mustacheExpress());
 app.set("views", "./views");
 app.set("view engine", "mustache");
 
+app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, "./public")));
 
 MongoClient.connect(dbUrl, (err, db) => {
@@ -51,7 +52,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/:_id", function (req, res) {
+app.get("/profile/:_id", function (req, res) {
     Robots.findOne({ _id: ObjectId(req.params._id) }, (err, foundRobot) => {
         if (err) {
             res.status(500).send(err);
@@ -63,6 +64,31 @@ app.get("/:_id", function (req, res) {
     })
 })
 
+app.get("/employed", function (req, res) {
+    console.log("Getting employed!!!!!");
+    Robots.find({ "job": { $ne: null } }).toArray((err, foundRobots) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        else if (!foundRobots) {
+            res.send("No user found")
+        }
+        res.render("home", { users: foundRobots });
+    })
+})
+
+app.get("/unemployed", function (req, res) {
+    Robots.find({ job: null }).toArray((err, foundRobots) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        else if (!foundRobots) {
+            res.send("No user found")
+        }
+        res.render("home", { users: foundRobots });
+    })
+})
+
 app.listen(port, function () {
-    console.log(`Sever is running on ${port} port.`);
+    console.log(`Server is running on ${port} port.`);
 })
